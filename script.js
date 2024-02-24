@@ -1,4 +1,4 @@
-const roles = ["Software Engineer", "Computer Science student", "Cloud enthusiast"];
+const roles = ["Software Developer", "CompSci Student", "Cloud Enthusiast"];
 let currentRole = 0;
 let currentChar = 0;
 let direction = 'forward';
