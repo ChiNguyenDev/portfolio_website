@@ -507,3 +507,11 @@ footer p {
 .contact-left button img{
   height: 15px;
 }
+
+.modal { display: none; /* Hidden by default */ }
+.modal-content { /* Style the modal content */ }
+.close { /* Style the close button */ }
+
+.btn-active {
+    background-color: grey /* Replace #darker-shade-color with the actual color you want */
+}

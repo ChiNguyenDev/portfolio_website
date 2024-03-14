@@ -36,6 +36,22 @@ function typeRole() {
   }
 }
 
+// opens modal for project description
+function toggleModal(modalId, btnElement) {
+    var modal = document.getElementById(modalId);
+
+    if (modal.style.display === "block") {
+        modal.style.display = "none";
+        btnElement.classList.remove("btn-active"); // Make the button lighter again
+    } else {
+        modal.style.display = "block";
+        btnElement.classList.add("btn-active"); // Make the button darker
+    }
+}
+
+
+
+
 
 
 // Start the typing effect
