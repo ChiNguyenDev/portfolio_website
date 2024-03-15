@@ -508,10 +508,35 @@ footer p {
   height: 15px;
 }
 
-.modal { display: none; /* Hidden by default */ }
-.modal-content { /* Style the modal content */ }
+.modal { display: none;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Adjust as needed */
+  padding: 20px;
+  margin: auto;}
+
+.modal-content h2, .modal-content h3 {
+  color: #333;
+}
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.modal-content p {
+  line-height: 1.5;
+  text-align: justify; /* Optional */
+}
 .close { /* Style the close button */ }
 
 .btn-active {
-    background-color: grey /* Replace #darker-shade-color with the actual color you want */
+    background-color: #DCDCDC /* Replace #darker-shade-color with the actual color you want */
 }
+
+

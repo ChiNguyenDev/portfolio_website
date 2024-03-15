@@ -37,20 +37,43 @@ function typeRole() {
 }
 
 // opens modal for project description
-function toggleModal(modalId, btnElement) {
-    var modal = document.getElementById(modalId);
+// Modified toggleModal function
+function adjustSpacingForAllModals() {
+  var allModals = document.querySelectorAll('.modal'); // Assuming all your modals have the class 'modal'
+  var projectsSection = document.getElementById('projects');
+  var anyModalOpen = Array.from(allModals).some(modal => modal.style.display === "block");
 
-    if (modal.style.display === "block") {
-        modal.style.display = "none";
-        btnElement.classList.remove("btn-active"); // Make the button lighter again
-    } else {
-        modal.style.display = "block";
-        btnElement.classList.add("btn-active"); // Make the button darker
-    }
+  if (anyModalOpen) {
+    // Find the tallest open modal to determine the needed spacing
+    var maxHeight = 0;
+    allModals.forEach(modal => {
+      if (modal.style.display === "block" && modal.offsetHeight > maxHeight) {
+        maxHeight = modal.offsetHeight;
+      }
+    });
+    // Adjust the '20' value as needed to control the gap
+    projectsSection.style.marginBottom = maxHeight + 20 + 'px';
+  } else {
+    // Reset the margin if all modals are closed
+    projectsSection.style.marginBottom = '0px';
+  }
 }
 
+// Modified toggleModal function
+function toggleModal(modalId, btnElement) {
+  var modal = document.getElementById(modalId);
 
+  if (modal.style.display === "block") {
+    modal.style.display = "none";
+    btnElement.classList.remove("btn-active");
+  } else {
+    modal.style.display = "block";
+    btnElement.classList.add("btn-active");
+  }
 
+  // Adjust the spacing for all modals after toggling
+  adjustSpacingForAllModals();
+}
 
 
 
