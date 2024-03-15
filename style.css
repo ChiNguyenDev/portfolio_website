@@ -539,4 +539,23 @@ footer p {
     background-color: #DCDCDC /* Replace #darker-shade-color with the actual color you want */
 }
 
+/* Project Image Wrapper */
+.project-img-wrapper {
+  cursor: zoom-in;
+}
+
+/* Zoomed Image */
+.zoomed-img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
+}
+
+
 

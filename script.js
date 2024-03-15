@@ -76,6 +76,34 @@ function toggleModal(modalId, btnElement) {
 }
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.project-img-wrapper .project-img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      // Prevents the event from bubbling up to the document level when an image is clicked
+      e.stopPropagation();
+
+      // Toggle the zoomed state
+      if (this.classList.contains('zoomed-img')) {
+        this.classList.remove('zoomed-img');
+      } else {
+        // Ensure that only one image can be zoomed at a time
+        document.querySelectorAll('.zoomed-img').forEach(zoomedImg => {
+          zoomedImg.classList.remove('zoomed-img');
+        });
+        this.classList.add('zoomed-img');
+      }
+    });
+  });
+
+  // Add an event listener to the whole document to zoom out when clicking anywhere but the image
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.zoomed-img').forEach(zoomedImg => {
+      zoomedImg.classList.remove('zoomed-img');
+    });
+  });
+});
+
+
 
 // Start the typing effect
 typeRole();
