@@ -78,40 +78,40 @@ function toggleModal(modalId, btnElement) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const slideshowContainer = document.querySelector('.slideshow-container');
-
-  // Assuming you have a function to update slides, ensure it runs here or is correctly initialized
-
-  slideshowContainer.addEventListener('click', function(event) {
-    const targetImg = event.target.closest('.project-img');
-
-    if (!targetImg) return; // If the clicked element is not an image, ignore the click
-
-  });
-
-
-  // Slideshow functionality
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  // Next/previous controls
-  window.plusSlides = function(n) {
-    showSlides(slideIndex += n);
-  };
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-  }
+  // Initialize all slideshows on the page
+  initAllSlideshows();
 
   // Typing effect for roles
   typeRole();
 });
+
+function initAllSlideshows() {
+  const slideshowContainers = document.querySelectorAll('.slideshow-container');
+  slideshowContainers.forEach(container => initSlideshow(container));
+}
+
+function initSlideshow(slideshowContainer) {
+  let slideIndex = 1;
+  showSlides(slideIndex, slideshowContainer);
+
+  // Next/previous controls
+  slideshowContainer.querySelector('.prev').addEventListener('click', () => {
+    showSlides(slideIndex -= 1, slideshowContainer);
+  });
+
+  slideshowContainer.querySelector('.next').addEventListener('click', () => {
+    showSlides(slideIndex += 1, slideshowContainer);
+  });
+
+  function showSlides(n, container) {
+    let slides = container.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    Array.from(slides).forEach(slide => slide.style.display = "none");
+    slides[slideIndex - 1].style.display = "block";
+  }
+}
+
+// The rest of your JavaScript code for typing effect and modals
 
 
