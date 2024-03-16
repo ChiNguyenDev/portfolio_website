@@ -328,7 +328,7 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">QuickShare</h2>
+            <h2 class="experience-sub-title project-title">QuickShare (Azure)</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -342,8 +342,14 @@
             <div id="modal2" class="modal">
               <div class="modal-content">
                 <h2>About</h2>
-                <p>Quickshare is a Flask-based, file-sharing platform offering fast, secure,
-                  and easy uploads and downloads with a user-friendly interface. </p>
+                <p>Quickshare is a Flask-based file-sharing platform that
+                  combines secure and easy file management with a user-friendly interface.
+                  It includes a login/user account feature, enabling users to view and manage
+                  a list of their uploaded files.
+                  <br/>
+              As my first project incorporating Azure Services, Quickshare demonstrates a
+                  commitment to leveraging reliable cloud technology for efficient and secure file sharing.
+                </p>
                 <br />
                 <h3>Technologies Used</h3>
                   <ul>
@@ -354,41 +360,42 @@
             </div>
           </div>
           <div class="details-container color-container">
-            <div class="article-container">
-              <div class="project-img-wrapper">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-              </div>
-            </div>
-            <h2 class="experience-sub-title project-title">Malware Found!</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/ChiNguyenDev/MalwareFound'"
-              >
-                Github
-              </button>
-            <button class="btn btn-color-2 project-btn" onclick="toggleModal('modal3', this)">Description & Technologies</button>
+        <h2 class="experience-sub-title project-title">Malware Found!</h2>
 
+        <!-- Slideshow container -->
+        <div id="project3-slideshow" class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="./assets/project-3.png" style="width:100%">
+          </div>
+          <div class="mySlides fade">
+            <img src="./assets/project-3.1.png" style="width:100%">
+          </div>
+          <!-- Add more slides as needed -->
 
-            </div>
-            <div id="modal3" class="modal">
-              <div class="modal-content">
-                <h2>About</h2>
-                <p>MalwareFound! is an arcade game developed with JavaFX. The objective is to beat the high score by shooting enemies, dodging attacks, and growing stronger as the levels progress. Ultimately, players must confront and defeat the boss.</p>
-                <br />
-                 <h3>Technologies Used</h3>
-                  <ul>
-                    <li><b>Tools & Languages:</b> Java, JavaFX, CSS</li>
-                  </ul>
-              </div>
-            </div>
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="btn-container">
+          <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ChiNguyenDev/MalwareFound'">Github</button>
+          <button class="btn btn-color-2 project-btn" onclick="toggleModal('modal3', this)">Description & Technologies</button>
+        </div>
+
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <h2>About</h2>
+            <p>MalwareFound! is an arcade game developed with JavaFX. The objective is to beat the high score by shooting enemies, dodging attacks, and growing stronger as the levels progress. Ultimately, players must confront and defeat the boss.</p>
+            <br />
+            <h3>Technologies Used</h3>
+            <ul>
+              <li><b>Tools & Languages:</b> Java, JavaFX, CSS</li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
+  </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -405,7 +412,7 @@
           <input type="text" name ="name" placeholder ="Your Name" class="contact-inputs" required>
           <input type="email" name ="email" placeholder ="Your E-Mail" class="contact-inputs" required>
           <textarea name="messasge" placeholder="Your Message" class="contact-inputs" required></textarea>
-          <button type="submit">Submit <img src ="assets/arrow_icon.png" alt="arrow image"></button>
+          <button type="submit" class="btn btn-color-2 project-btn">Submit</button>
         </form>
       </div>
 

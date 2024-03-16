@@ -50,7 +50,8 @@
 @media screen and (max-width: 600px) {
   #contact,
   footer {
-    height: 40vh;
+    height: auto; /* Adjusted from a fixed height to auto */
+    padding-bottom: 20px; /* Additional padding at the bottom */
   }
   #profile {
     height: 83vh;
@@ -70,6 +71,7 @@
   }
   .contact-info-container {
     margin: 0;
+    justify-content: center; /* Center the content */
   }
   .contact-info-container p,
   .nav-links li a {
@@ -101,4 +103,38 @@
     text-align: justify;
   }
 
+  /* Begin added styles */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align form elements centrally */
+  }
+
+  .contact-inputs, .contact-left button {
+    width: 100%; /* Make input fields and button span the full width */
+    margin-bottom: 15px; /* Add space between each field */
+  }
+
+  .contact-left {
+    width: 100%; /* Ensure the form uses the full available width */
+  }
+
+  .contact-info-upper-container {
+    flex-direction: column; /* Stack the contact information vertically */
+    margin-top: 20px; /* Add space above the contact information */
+  }
+
+  .contact-info-container img {
+    margin-right: 10px; /* Space between the icon and text */
+  }
+
+  .contact-info-container {
+    justify-content: center; /* Center content within each contact info container */
+  }
+
+  .contact-info-container p {
+    font-size: 16px; /* Adjust font size for readability */
+  }
+  /* End added styles */
 }
+

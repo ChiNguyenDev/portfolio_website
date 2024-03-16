@@ -376,6 +376,10 @@ article .icon {
   height: 90%;
 }
 
+.slideshow-container img {
+  border-radius: 15px; /* Adjust this value as needed */
+}
+
 .project-title {
   margin: 1rem;
   color: black;
@@ -452,12 +456,14 @@ footer p {
   text-align: center;
 }
 
-.contact-container {
-  height: 100vh;
-  display:flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form elements */
+    width: 90%; /* Adjust the width to not span the full width, and add */
+    margin-left: auto; /* Center the container by automatically adjusting the left and */
+    margin-right: auto; /* right margins */
+  }
 
 .contact-left {
   display: flex;
@@ -487,21 +493,6 @@ footer p {
 
 .contact-inputs:focus {
   border: 2px solid black;
-}
-
-
-.contact-left button{
-  display: flex;
-  align-items: center;
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: 500;
-  color: rgb(53, 53, 53);
-  gap: 10px;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  border-radius: 50px;
-  background: linear-gradient(270deg, white, lightgrey);
 }
 
 .contact-left button img{
@@ -544,17 +535,63 @@ footer p {
   cursor: zoom-in;
 }
 
-/* Zoomed Image */
-.zoomed-img {
-  position: fixed;
+
+/* Style the slideshow container */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px; /* Adjust based on your preference or make it 100% if you want it to be full width */
+  margin: auto;
+  overflow: hidden; /* Added to ensure the arrows don't cause overflow */
+}
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  cursor: zoom-out;
+  width: auto;
+  margin-top: -22px; /* Adjust if necessary to vertically center */
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  z-index: 10; /* Ensure arrows are above the images */
+}
+
+/* Position the "next button" to the right and "prev button" to the left */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+/* On hover, add a slight background color */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 

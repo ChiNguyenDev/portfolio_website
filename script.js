@@ -76,35 +76,42 @@ function toggleModal(modalId, btnElement) {
 }
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.project-img-wrapper .project-img').forEach(img => {
-    img.addEventListener('click', function(e) {
-      // Prevents the event from bubbling up to the document level when an image is clicked
-      e.stopPropagation();
+  const slideshowContainer = document.querySelector('.slideshow-container');
 
-      // Toggle the zoomed state
-      if (this.classList.contains('zoomed-img')) {
-        this.classList.remove('zoomed-img');
-      } else {
-        // Ensure that only one image can be zoomed at a time
-        document.querySelectorAll('.zoomed-img').forEach(zoomedImg => {
-          zoomedImg.classList.remove('zoomed-img');
-        });
-        this.classList.add('zoomed-img');
-      }
-    });
+  // Assuming you have a function to update slides, ensure it runs here or is correctly initialized
+
+  slideshowContainer.addEventListener('click', function(event) {
+    const targetImg = event.target.closest('.project-img');
+
+    if (!targetImg) return; // If the clicked element is not an image, ignore the click
+
   });
 
-  // Add an event listener to the whole document to zoom out when clicking anywhere but the image
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.zoomed-img').forEach(zoomedImg => {
-      zoomedImg.classList.remove('zoomed-img');
-    });
-  });
+
+  // Slideshow functionality
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  window.plusSlides = function(n) {
+    showSlides(slideIndex += n);
+  };
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  // Typing effect for roles
+  typeRole();
 });
 
-
-
-// Start the typing effect
-typeRole();
 
