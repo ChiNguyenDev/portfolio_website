@@ -70,8 +70,6 @@ function toggleModal(modalId, btnElement) {
     modal.style.display = "block";
     btnElement.classList.add("btn-active");
   }
-
-  // Adjust the spacing for all modals after toggling
   adjustSpacingForAllModals();
 }
 
@@ -80,7 +78,6 @@ function toggleModal(modalId, btnElement) {
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all slideshows on the page
   initAllSlideshows();
-
   // Typing effect for roles
   typeRole();
 });

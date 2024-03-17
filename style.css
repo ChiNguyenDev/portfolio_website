@@ -403,7 +403,7 @@ article .icon {
 }
 
 .slideshow-container img {
-  border-radius: 15px; /* Adjust this value as needed */
+  border-radius: 15px;
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
@@ -495,10 +495,10 @@ footer p {
   .contact-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the form elements */
-    width: 90%; /* Adjust the width to not span the full width, and add */
-    margin-left: auto; /* Center the container by automatically adjusting the left and */
-    margin-right: auto; /* right margins */
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 .contact-left {
@@ -539,7 +539,7 @@ footer p {
   background-color: #F8F8FF;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Adjust as needed */
+  max-width: 500px;
   padding: 20px;
   margin: auto;}
 
@@ -558,24 +558,22 @@ footer p {
 
 .modal-content p {
   line-height: 1.5;
-  text-align: justify; /* Optional */
+  text-align: justify;
 }
-.close { /* Style the close button */ }
 
 .btn-active {
-    background-color: #DCDCDC /* Replace #darker-shade-color with the actual color you want */
+    background-color: #DCDCDC
 }
 
-/* Project Image Wrapper */
+
 .project-img-wrapper {
   cursor: zoom-in;
 }
 
 
-/* Style the slideshow container */
 .slideshow-container {
   position: relative;
-  max-width: 1000px; /* Adjust based on your preference or make it 100% if you want it to be full width */
+  max-width: 1000px;
   margin: auto;
   overflow: hidden; /* Added to ensure the arrows don't cause overflow */
 }
@@ -586,8 +584,7 @@ footer p {
   display: none;
 }
 
-/* Next & previous buttons */
-/* Next & previous buttons */
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -614,12 +611,12 @@ footer p {
   border-radius: 0 3px 3px 0;
 }
 
-/* On hover, add a slight background color */
+
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Fading animation */
+
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
