@@ -112,6 +112,4 @@ function initSlideshow(slideshowContainer) {
   }
 }
 
-// The rest of your JavaScript code for typing effect and modals
-
 

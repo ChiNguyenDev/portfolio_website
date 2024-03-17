@@ -70,7 +70,7 @@
     flex-wrap: wrap;
   }
   .contact-info-container {
-    margin: 0;
+    margin-left: 0;
     justify-content: center; /* Center the content */
   }
   .contact-info-container p,
@@ -108,6 +108,11 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Align form elements centrally */
+    margin-left: 4px;
+  }
+
+  #email-submit {
+    margin-left: 14px;
   }
 
   .contact-inputs, .contact-left button {
@@ -122,6 +127,7 @@
   .contact-info-upper-container {
     flex-direction: column; /* Stack the contact information vertically */
     margin-top: 20px; /* Add space above the contact information */
+    margin-left: 12px;
   }
 
   .contact-info-container img {
@@ -135,6 +141,5 @@
   .contact-info-container p {
     font-size: 16px; /* Adjust font size for readability */
   }
-  /* End added styles */
 }
 

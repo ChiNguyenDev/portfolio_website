@@ -8,7 +8,17 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
+  line-height: 1.6; /* Improve readability */
+  background-color: #f4f4f4; /* Light background to reduce eye strain */
+}
+
+.title, .section__text__p1, .experience-sub-title, .project-title {
+  color: #333; /* Darker font color for better contrast */
+}
+
+.section__text__p2 {
+  font-size: 1.5rem; /* Slightly reduce for better fit on smaller screens */
 }
 
 html {
@@ -21,10 +31,21 @@ p {
 
 /* TRANSITION */
 
-a,
-.btn {
-  transition: all 300ms ease;
+.btn, a, icon.clickable {
+  display: inline-block; /* Ensure proper spacing and alignment */
+  backface-visibility: hidden; /* Improve animation performance */
+  transform: translateZ(0); /* Force GPU acceleration for smoother animations */
 }
+
+.btn:hover, a:hover, icon.clickable {
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+.btn:active, a:active, icon.clickable {
+  transform: translateY(1px); /* Push effect on click */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Less pronounced shadow */
+}
+
 
 /* DESKTOP NAV */
 
@@ -306,8 +327,13 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
-}
 
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.details-container:hover {
+  transform: scale(1.02);
+}
 
 .section-container {
   gap: 4rem;
@@ -378,6 +404,7 @@ article .icon {
 
 .slideshow-container img {
   border-radius: 15px; /* Adjust this value as needed */
+  border: rgb(53, 53, 53) 0.1rem solid;
 }
 
 .project-title {
@@ -441,6 +468,15 @@ article .icon {
   cursor: default;
 }
 
+*:hover {
+  transition: all 0.3s ease-out;
+}
+
+.cursor, .icon:hover, .btn:hover, a:hover {
+  cursor: pointer;
+}
+
+
 .email-icon {
   height: 2.5rem;
 }
@@ -500,7 +536,7 @@ footer p {
 }
 
 .modal { display: none;
-  background-color: #fff;
+  background-color: #F8F8FF;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px; /* Adjust as needed */
@@ -594,5 +630,9 @@ footer p {
   to {opacity: 1}
 }
 
+input:focus, textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
 
 
