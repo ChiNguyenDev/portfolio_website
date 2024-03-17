@@ -171,7 +171,7 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: 800px;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -337,7 +337,7 @@ section {
 
 .section-container {
   gap: 4rem;
-  height: 80%;
+  height: 50%;
 }
 
 .section__pic-container {
