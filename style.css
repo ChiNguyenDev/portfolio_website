@@ -335,6 +335,11 @@ section {
   transform: scale(1.02);
 }
 
+.slideshow-container:hover {
+
+    transform: scale(1.14);
+}
+
 .section-container {
   gap: 4rem;
   height: 50%;
@@ -351,6 +356,7 @@ section {
 #experience {
   position: relative;
 }
+
 
 .experience-sub-title {
   color: rgb(85, 85, 85);
@@ -576,6 +582,7 @@ footer p {
   max-width: 1000px;
   margin: auto;
   overflow: hidden; /* Added to ensure the arrows don't cause overflow */
+      transition: transform 0.3s ease;
 }
 
 
