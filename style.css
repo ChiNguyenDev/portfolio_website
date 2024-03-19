@@ -1,5 +1,3 @@
-/* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -9,16 +7,16 @@
 
 body {
   font-family: Poppins, sans-serif;
-  line-height: 1.6; /* Improve readability */
-  background-color: #f4f4f4; /* Light background to reduce eye strain */
+  line-height: 1.6;
+  background-color: #f4f4f4;
 }
 
 .title, .section__text__p1, .experience-sub-title, .project-title {
-  color: #333; /* Darker font color for better contrast */
+  color: #333;
 }
 
 .section__text__p2 {
-  font-size: 1.5rem; /* Slightly reduce for better fit on smaller screens */
+  font-size: 1.5rem;
 }
 
 html {
@@ -29,25 +27,23 @@ p {
   color: rgb(85, 85, 85);
 }
 
-/* TRANSITION */
 
 .btn, a, icon.clickable {
-  display: inline-block; /* Ensure proper spacing and alignment */
-  backface-visibility: hidden; /* Improve animation performance */
-  transform: translateZ(0); /* Force GPU acceleration for smoother animations */
+  display: inline-block;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .btn:hover, a:hover, icon.clickable {
-  transform: translateY(-3px); /* Slight lift effect on hover */
+  transform: translateY(-3px);
 }
 
 .btn:active, a:active, icon.clickable {
-  transform: translateY(1px); /* Push effect on click */
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Less pronounced shadow */
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
 
-/* DESKTOP NAV */
 
 nav,
 .nav-links {
@@ -87,7 +83,6 @@ a:hover {
   cursor: default;
 }
 
-/* HAMBURGER MENU */
 
 #hamburger-nav {
   display: none;
@@ -167,7 +162,6 @@ a:hover {
   transform: none;
 }
 
-/* SECTIONS */
 
 section {
   padding-top: 4vh;
@@ -181,7 +175,6 @@ section {
   display: flex;
 }
 
-/* PROFILE SECTION */
 
 #profile {
   display: flex;
@@ -227,7 +220,6 @@ section {
   gap: 1rem;
 }
 
-/* ICONS */
 
 .icon {
   cursor: pointer;
@@ -239,7 +231,6 @@ section {
   height: 4rem;
 }
 
-/* BUTTONS */
 
 .btn-container {
   display: flex;
@@ -351,7 +342,6 @@ section {
   margin: auto 0;
 }
 
-/* EXPERIENCE SECTION */
 
 #experience {
   position: relative;
@@ -487,7 +477,6 @@ article .icon {
   height: 2.5rem;
 }
 
-/* FOOTER SECTION */
 
 footer {
   height: 26vh;
@@ -581,12 +570,11 @@ footer p {
   position: relative;
   max-width: 1000px;
   margin: auto;
-  overflow: hidden; /* Added to ensure the arrows don't cause overflow */
+  overflow: hidden;
       transition: transform 0.3s ease;
 }
 
 
-/* Hide the images by default */
 .mySlides {
   display: none;
 }
@@ -597,17 +585,16 @@ footer p {
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px; /* Adjust if necessary to vertically center */
+  margin-top: -22px;
   padding: 16px;
   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   user-select: none;
-  z-index: 10; /* Ensure arrows are above the images */
+  z-index: 10;
 }
 
-/* Position the "next button" to the right and "prev button" to the left */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;

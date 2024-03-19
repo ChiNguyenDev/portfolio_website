@@ -1,3 +1,9 @@
+@media (min-width: 1920px) {
+    .slideshow-container:hover {
+        transform: scale(1.06);
+    }
+}
+
 @media screen and (max-width: 1400px) {
   #profile {
     height: 83vh;
@@ -9,6 +15,9 @@
   #contact,
   #projects {
     height: fit-content;
+  }
+  .slideshow-container:hover {
+      transform: scale(1.1);
   }
 }
 

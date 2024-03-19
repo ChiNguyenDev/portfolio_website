@@ -1,16 +1,20 @@
+// List of Strings that get looped trough
 const roles = ["Software Developer", "CompSci Student", "Cloud Enthusiast"];
 let currentRole = 0;
 let currentChar = 0;
 let direction = 'forward';
-const typingSpeed = 130; // milliseconds
+const typingSpeed = 130;
 const roleElement = document.getElementById('role');
 
+// Toggle method for the hamburger menu
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
+
+// Text type & delete "animations"
 function typeRole() {
   roleElement.style.color = "lightSkyBlue"; // Set the color for all roles
 
@@ -37,7 +41,6 @@ function typeRole() {
 }
 
 // opens modal for project description
-// Modified toggleModal function
 function adjustSpacingForAllModals() {
   var allModals = document.querySelectorAll('.modal'); // Assuming all your modals have the class 'modal'
   var projectsSection = document.getElementById('projects');
@@ -51,7 +54,6 @@ function adjustSpacingForAllModals() {
         maxHeight = modal.offsetHeight;
       }
     });
-    // Adjust the '20' value as needed to control the gap
     projectsSection.style.marginBottom = maxHeight + 20 + 'px';
   } else {
     // Reset the margin if all modals are closed
@@ -59,7 +61,7 @@ function adjustSpacingForAllModals() {
   }
 }
 
-// Modified toggleModal function
+// Toggle modal by clicking the button
 function toggleModal(modalId, btnElement) {
   var modal = document.getElementById(modalId);
 
