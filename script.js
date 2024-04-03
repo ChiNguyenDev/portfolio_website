@@ -1,5 +1,5 @@
 // List of Strings that get looped trough
-const roles = ["Software Developer", "CompSci Student", "Cloud Enthusiast"];
+const roles = ["Software Developer", "CompSci Student", "Cloud Advocate"];
 let currentRole = 0;
 let currentChar = 0;
 let direction = 'forward';
@@ -8,107 +8,110 @@ const roleElement = document.getElementById('role');
 
 // Toggle method for the hamburger menu
 function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
 }
 
 // Text type & delete "animations"
 function typeRole() {
-  roleElement.style.color = "lightSkyBlue"; // Set the color for all roles
+    roleElement.style.color = "lightSkyBlue"; // Set the color for all roles
 
-  if (direction === 'forward') {
-    if (currentChar < roles[currentRole].length) {
-      roleElement.textContent += roles[currentRole].charAt(currentChar);
-      currentChar++;
-      setTimeout(typeRole, typingSpeed);
+    if (direction === 'forward') {
+        if (currentChar < roles[currentRole].length) {
+            roleElement.textContent += roles[currentRole].charAt(currentChar);
+            currentChar++;
+            setTimeout(typeRole, typingSpeed);
+        } else {
+            setTimeout(typeRole, typingSpeed * 3); // Wait a bit at the end of typing
+            direction = 'backward';
+        }
     } else {
-      setTimeout(typeRole, typingSpeed * 3); // Wait a bit at the end of typing
-      direction = 'backward';
+        if (currentChar > 0) {
+            roleElement.textContent = roleElement.textContent.substring(0, roleElement.textContent.length - 1);
+            currentChar--;
+            setTimeout(typeRole, typingSpeed / 2); // Delete faster
+        } else {
+            currentRole = (currentRole + 1) % roles.length; // Move to the next role
+            direction = 'forward';
+            setTimeout(typeRole, typingSpeed);
+        }
     }
-  } else {
-    if (currentChar > 0) {
-      roleElement.textContent = roleElement.textContent.substring(0, roleElement.textContent.length - 1);
-      currentChar--;
-      setTimeout(typeRole, typingSpeed / 2); // Delete faster
-    } else {
-      currentRole = (currentRole + 1) % roles.length; // Move to the next role
-      direction = 'forward';
-      setTimeout(typeRole, typingSpeed);
-    }
-  }
 }
 
 // opens modal for project description
 function adjustSpacingForAllModals() {
-  var allModals = document.querySelectorAll('.modal'); // Assuming all your modals have the class 'modal'
-  var projectsSection = document.getElementById('projects');
-  var anyModalOpen = Array.from(allModals).some(modal => modal.style.display === "block");
+    var allModals = document.querySelectorAll('.modal'); // Assuming all your modals have the class 'modal'
+    var projectsSection = document.getElementById('projects');
+    var anyModalOpen = Array.from(allModals).some(modal => modal.style.display === "block");
 
-  if (anyModalOpen) {
-    // Find the tallest open modal to determine the needed spacing
-    var maxHeight = 0;
-    allModals.forEach(modal => {
-      if (modal.style.display === "block" && modal.offsetHeight > maxHeight) {
-        maxHeight = modal.offsetHeight;
-      }
-    });
-    projectsSection.style.marginBottom = maxHeight + 20 + 'px';
-  } else {
-    // Reset the margin if all modals are closed
-    projectsSection.style.marginBottom = '0px';
-  }
+    if (anyModalOpen) {
+        // Find the tallest open modal to determine the needed spacing
+        var maxHeight = 0;
+        allModals.forEach(modal => {
+            if (modal.style.display === "block" && modal.offsetHeight > maxHeight) {
+                maxHeight = modal.offsetHeight;
+            }
+        });
+        projectsSection.style.marginBottom = maxHeight + 20 + 'px';
+    } else {
+        // Reset the margin if all modals are closed
+        projectsSection.style.marginBottom = '0px';
+    }
 }
 
 // Toggle modal by clicking the button
 function toggleModal(modalId, btnElement) {
-  var modal = document.getElementById(modalId);
+    var modal = document.getElementById(modalId);
 
-  if (modal.style.display === "block") {
-    modal.style.display = "none";
-    btnElement.classList.remove("btn-active");
-  } else {
-    modal.style.display = "block";
-    btnElement.classList.add("btn-active");
-  }
-  adjustSpacingForAllModals();
+    if (modal.style.display === "block") {
+        modal.style.display = "none";
+        btnElement.classList.remove("btn-active");
+    } else {
+        modal.style.display = "block";
+        btnElement.classList.add("btn-active");
+    }
+    adjustSpacingForAllModals();
 }
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize all slideshows on the page
-  initAllSlideshows();
-  // Typing effect for roles
-  typeRole();
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize all slideshows on the page
+    initAllSlideshows();
+    // Typing effect for roles
+    typeRole();
 });
 
 function initAllSlideshows() {
-  const slideshowContainers = document.querySelectorAll('.slideshow-container');
-  slideshowContainers.forEach(container => initSlideshow(container));
+    const slideshowContainers = document.querySelectorAll('.slideshow-container');
+    slideshowContainers.forEach(container => initSlideshow(container));
 }
 
 function initSlideshow(slideshowContainer) {
-  let slideIndex = 1;
-  showSlides(slideIndex, slideshowContainer);
+    let slideIndex = 1;
+    showSlides(slideIndex, slideshowContainer);
 
-  // Next/previous controls
-  slideshowContainer.querySelector('.prev').addEventListener('click', () => {
-    showSlides(slideIndex -= 1, slideshowContainer);
-  });
+    // Next/previous controls
+    slideshowContainer.querySelector('.prev').addEventListener('click', () => {
+        showSlides(slideIndex -= 1, slideshowContainer);
+    });
 
-  slideshowContainer.querySelector('.next').addEventListener('click', () => {
-    showSlides(slideIndex += 1, slideshowContainer);
-  });
+    slideshowContainer.querySelector('.next').addEventListener('click', () => {
+        showSlides(slideIndex += 1, slideshowContainer);
+    });
 
-  function showSlides(n, container) {
-    let slides = container.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    Array.from(slides).forEach(slide => slide.style.display = "none");
-    slides[slideIndex - 1].style.display = "block";
-  }
+    function showSlides(n, container) {
+        let slides = container.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        Array.from(slides).forEach(slide => slide.style.display = "none");
+        slides[slideIndex - 1].style.display = "block";
+    }
 }
 
 
